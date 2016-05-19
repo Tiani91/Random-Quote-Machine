@@ -45,3 +45,19 @@ img{
   font-size:15px;
   font-style:italic;
 }
+$(document).ready(function() {
+
+  function getQuote() {
+    var quotes = ["The best way to predict the future if to create it.", "We know what we are, but know not what we may be.", "It is during our darkest moments that we must focus to see the light.", "You can't blame gravity for falling in love.", "If you know the enemy and know yourself you need not fear the results of a hundred battles.", "I am become death, the destroyer of worlds."];
+    var author = ["- Abraham Lincoln", "- William Shakespeare", "- Aristotle Onassis", "- Albert Einstein", "- Sun Tzu", "- J. Robert Oppenheimer"];
+    var randomNum = Math.floor((Math.random() * quotes.length));
+    var randomQuote = quotes[randomNum];
+    var randomAuthor = author[randomNum];
+    $(".quote").text(randomQuote);
+    $(".author").text(randomAuthor);
+
+  }
+  $(".btn").on("click", function() {
+    getQuote();
+  });
+});
